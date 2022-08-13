@@ -2,7 +2,7 @@
 
 Creating a full integration test of a React App with Redux Tool Kit and [the provided wrapper](https://redux.js.org/usage/writing-tests#setting-up-a-reusable-test-render-function).
 
-Mocking the request with (axios-mock-adapter)[https://www.npmjs.com/package/axios-mock-adapter].
+Mocking the request with [axios-mock-adapter](https://www.npmjs.com/package/axios-mock-adapter).
 
 ## Available Scripts
 
