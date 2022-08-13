@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    pokemon: [],
+    pokemonItems: [],
     loading: false,
     error: null,
 };
@@ -25,7 +25,7 @@ const pokemonSlice = createSlice({
         });
         builder.addCase(getPokemonById.fulfilled, (state, action) => {
             state.loading = false;
-            state.pokemon = action.payload;
+            state.pokemonItems.push(action.payload);
         });
         builder.addCase(getPokemonById.rejected, (state, action) => {
             state.loading = false;

@@ -1,9 +1,17 @@
 import './App.css';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getPokemonById } from './store/pokemonSlice';
 
 function App() {
   const dispatch = useDispatch();
+  const latestPokemon = useSelector(state => {
+    const { pokemonItems } = state.pokemon;
+
+    if (pokemonItems?.length > 0) {
+      return pokemonItems[pokemonItems.length - 1];
+    }
+    return null;
+  });
   
   const handleRandomPokemonFetch = () => {
     const randomNumber = Math.floor(Math.random() * Math.floor(100));
@@ -20,6 +28,14 @@ function App() {
         <button onClick={handleRandomPokemonFetch}>
           Fetch Random Pokemon
         </button>
+        {latestPokemon && (
+          <div>
+            <h3>
+              {latestPokemon.name}
+            </h3>
+            <img src={latestPokemon.sprites.front_default} alt={latestPokemon.name} />
+          </div>
+        )}
       </header>
     </div>
   );
