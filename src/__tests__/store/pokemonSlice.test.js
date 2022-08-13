@@ -66,6 +66,8 @@ describe("pokemon slice", () => {
 
   // not really fetched yet
   it("should render the app with the latest pokemon", () => {
+    // provide an initialState with a pokemon
+    // we don't really fetch the pokemon, just use the data we have
     render(<App />, {
       initialState: {
         pokemon: {
@@ -81,16 +83,20 @@ describe("pokemon slice", () => {
 
   // lets fetch a pokemon as an user would do
   it("should render the app with the fetched latest pokemon", async () => {
-    render(<App id={pokemonData.id} />, initialState);
-    const button = screen.getByText("Fetch Random Pokemon");
+    // arrange
+    render(<App id={pokemonData.id} />, {});
+    
+    // act
     // click the button
+    const button = screen.getByText("Fetch Random Pokemon");
     fireEvent.click(button);
 
+    // assert
     // wait for the request to finish
     await waitFor(() => {
       // pokemon in the state
       const pokemonName = screen.getByText(pokemonData.name);
-      // screen.debug();
+      // screen.debug(); // uncomment this to see the DOM in the console
       expect(pokemonName).toBeInTheDocument();
     });
   });
