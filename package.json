@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/preset-env": "^7.18.10",
     "@reduxjs/toolkit": "^1.8.4",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/user-event": "^13.5.0",
@@ -29,6 +30,10 @@
     "transform": {
       "^.+\\.(js|jsx)$": "babel-jest"
     },
+    "moduleNameMapper": {
+      "\\.(css|less)$": "<rootDir>/src/__mocks__/styleMock.js"
+    },
+    "testEnvironment": "jsdom",
     "collectCoverage": true,
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}",
@@ -56,6 +61,7 @@
     "axios-mock-adapter": "^1.21.2",
     "babel-jest": "^28.1.3",
     "jest": "^28.1.3",
+    "jest-environment-jsdom": "^28.1.3",
     "prettier": "2.7.1"
   }
 }
