@@ -1,6 +1,6 @@
-# Test RTK with Jest and RTL
+# Integration Redux Tool Kit test with Jest and React Testing Library 
 
-Creating a full integration test of a React App with Redux Tool Kit and [the provided wrapper](https://redux.js.org/usage/writing-tests#setting-up-a-reusable-test-render-function).
+Creating a full integration test of a React App with Redux Tool Kit and [the provided wrapper](https://redux.js.org/usage/writing-tests#setting-up-a-reusable-test-render-function) by the docs which uses [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) and [Jest](https://jestjs.io/).
 
 Mocking the request with [axios-mock-adapter](https://www.npmjs.com/package/axios-mock-adapter).
 
