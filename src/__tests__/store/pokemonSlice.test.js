@@ -79,7 +79,7 @@ describe("pokemon slice", () => {
     expect(pokemonName).toBeInTheDocument();
   });
 
-  // lets fetch a pokemon
+  // lets fetch a pokemon as an user would do
   it("should render the app with the fetched latest pokemon", async () => {
     render(<App id={pokemonData.id} />, initialState);
     const button = screen.getByText("Fetch Random Pokemon");
