@@ -1,22 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import { useDispatch } from 'react-redux';
+import { getPokemonById } from './store/pokemonSlice';
 
 function App() {
+  const dispatch = useDispatch();
+  
+  const handleRandomPokemonFetch = () => {
+    const randomNumber = Math.floor(Math.random() * Math.floor(100));
+    dispatch(getPokemonById(randomNumber));
+  }
+    
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h3>
+          Fetch your random pokemon!
+        </h3>
+        <button onClick={handleRandomPokemonFetch}>
+          Fetch Random Pokemon
+        </button>
       </header>
     </div>
   );
