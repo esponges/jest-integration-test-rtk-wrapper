@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Test RTK Wrapper with Jest and RTL
 
 Creating a full integration test of a React App with Redux Tool Kit and [the provided wrapper](https://redux.js.org/usage/writing-tests#setting-up-a-reusable-test-render-function).
 
